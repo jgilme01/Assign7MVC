@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Assign7MVC.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonPassWord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonEntryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonPassWordSeed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonPassWord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonEntryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonPassWordSeed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonKey }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonKey })
+        </td>
+    </tr>
+}
+
+</table>

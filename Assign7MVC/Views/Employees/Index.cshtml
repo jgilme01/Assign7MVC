@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Assign7MVC.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeHireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAnnualSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.PersonLastName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeHireDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAnnualSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.PersonLastName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeKey }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeKey })
+        </td>
+    </tr>
+}
+
+</table>

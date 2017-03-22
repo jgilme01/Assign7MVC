@@ -1,0 +1,42 @@
+﻿@model Assign7MVC.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeHireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeHireDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAnnualSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAnnualSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.PersonLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.PersonLastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
